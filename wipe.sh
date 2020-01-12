@@ -7,7 +7,7 @@ wipeStr="ABCDEFG"
 # If your having high CPU usage or crashes, set this to a small value like 0.001
 rest=0
 
-echo "Starting wipe"
+printf "Starting wipe\n"
 ctr=0
 offSet=0
 while (( ctr != wipeRuns ))
@@ -33,5 +33,6 @@ do
 		sleep $rest
 	done
 	rm $wipeFile
-	echo "completed wipe: $ctr/$wipeRuns"
+	printf "completed wipe: $ctr/$wipeRuns\n"
 done
+printf "All done...\n"
