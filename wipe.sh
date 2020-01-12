@@ -7,6 +7,7 @@ wipeStr="ABCDEFG"
 # If your having high CPU usage or crashes, set this to a small value like 0.001
 rest=0
 
+echo "Starting wipe"
 ctr=0
 offSet=0
 while (( ctr != wipeRuns ))
