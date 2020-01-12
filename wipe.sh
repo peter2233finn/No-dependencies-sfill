@@ -32,4 +32,5 @@ do
 		sleep $rest
 	done
 	rm $wipeFile
+	echo "completed wipe: $ctr/$wipeRuns"
 done
