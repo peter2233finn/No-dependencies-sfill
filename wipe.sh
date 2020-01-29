@@ -53,7 +53,7 @@ do
 		cp tmpFile $wipeFolder/$wipeFile.$fileCtr || (( errorCtr++))
 		((fileCtr++))
 		sleep $rest
-		printf "Wipe number: $ctr/$wiprRuns file: $fileCtr created\n"
+		printf "Wipe number: $ctr/$wipeRuns file: $fileCtr created\n"
 	done
 	printf "Not enough memory to create any more files. Will fill up the remaining space/n"
 	while true
@@ -64,6 +64,6 @@ do
 	rm $wipeFile
 	rm -r $wipeFolder
 	rm tmpFile
-	printf "completed wipe: $ctr/$wipeRuns\n"
+	printf "completed wipe: $ctr/$wipeRuns \n"
 done
 printf "All done...\n"
