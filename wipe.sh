@@ -22,7 +22,7 @@ do
 	offCtr=0
 	for i in {0..$wipes}
 		do
-
+		printf "Creating tmp file.\n"
 		# do a charecter offset so it doesnt wipe over itself identically
 		while (( offSet > offCtr ))
 		do
@@ -44,8 +44,8 @@ do
   
 	# create the folder
 	mkdir $wipeFolder
-	printf "Folder $wipeFolder created...\n"
-
+	printf "Folder $wipeFolder created.\n"
+	printf "Starting wipe now.\n"
 	fileCtr=0
 	while (( errorCtr < 20 ))
 	do
@@ -66,4 +66,4 @@ do
 	rm tmpFile
 	printf "completed wipe: $ctr/$wipeRuns \n"
 done
-printf "All done...\n"
+printf "All done\n"
