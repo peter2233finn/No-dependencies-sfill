@@ -8,5 +8,5 @@ cp
 mkdir
 sleep
 rm
->> (to appent to file)
+/>/> (to appent to file)
 seq
