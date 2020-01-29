@@ -58,7 +58,7 @@ do
 	printf "Not enough memory to create any more files. Will fill up the remaining space/n"
 	while true
 	do
-		echo $wipeStr >> $wipeFolder/$wipeFile || break
+		printf $wipeStr >> $wipeFolder/$wipeFile || break
 
 	done
 	rm $wipeFile
