@@ -47,13 +47,13 @@ do
 	printf "Folder $wipeFolder created...\n"
 
 	fileCtr=0
-	while (( errCtr != 20 ))
+	while (( errorCtr < 20 ))
 	do
-    		# Will copy the file until 20 errors accor (Assumption is that memory is full) when memory is full
+    		# Will copy the file until 20 errors accor (Assumption is that memory is full)
 		cp tmpFile $wipeFolder/$wipeFile.$fileCtr || (( errorCtr++))
 		((fileCtr++))
 		sleep $rest
-		printf "file: $fileCtr created\n"
+		printf "Wipe number: $ctr/$wiprRuns file: $fileCtr created\n"
 	done
 	printf "Not enough memory to create any more files. Will fill up the remaining space/n"
 	while true
