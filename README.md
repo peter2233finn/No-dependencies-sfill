@@ -4,3 +4,5 @@ or libraries necessary, as the aim was to have it run on android with bash insta
 
 Dependencies: printf, cp, mkdir, sleep, rm, seq
 Basically a rudimentary, dependency free version of sfill from secure-wipe
+
+Always use the proper sfill when you can.
