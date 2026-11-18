@@ -1,7 +1,7 @@
 # number of wipes you want it to do
 wipeRuns=5
 # Name of the file to create
-wipeFile="fileee"
+wipeFile="wipe file"
 # String to fill the file with
 wipeStr="ABCDEFG"
 # If your having high CPU usage or crashes, set this to a small value like 0.001
@@ -9,7 +9,7 @@ rest=0
 # blockSize sets the size of the blocks
 blockSize=1000
 # wipeFolder is the name of the folder the wipe files will be copied to
-wipeFolder="folder1"
+wipeFolder="wipefolder"
 
 printf "Starting wipe\n"
 ctr=0
@@ -33,7 +33,7 @@ do
 		# create tempoary block
 		for i in $(seq 1 $blockSize)
 		do
-			printf $wipeStr >> tmpFile
+			printf "$wipeStr" >> tmpFile
 		done
 	done
 
@@ -43,14 +43,14 @@ do
 	errorCtr=0
   
 	# create the folder
-	mkdir $wipeFolder
+	mkdir "$wipeFolder"
 	printf "Folder $wipeFolder created.\n"
 	printf "Starting wipe now.\n"
 	fileCtr=0
 	while (( errorCtr < 20 ))
 	do
     		# Will copy the file until 20 errors accor (Assumption is that memory is full)
-		cp tmpFile $wipeFolder/$wipeFile.$fileCtr || (( errorCtr++))
+		cp tmpFile "$wipeFolder/$wipeFile.$fileCtr" || (( errorCtr++))
 		((fileCtr++))
 		sleep $rest
 		printf "Wipe number: $ctr/$wipeRuns file: $fileCtr created\n"
@@ -58,11 +58,11 @@ do
 	printf "Not enough memory to create any more files. Will fill up the remaining space/n"
 	while true
 	do
-		printf $wipeStr >> $wipeFolder/$wipeFile || break
+		printf "$wipeStr" >> "$wipeFolder/$wipeFile" || break
 
 	done
-	rm $wipeFile
-	rm -r $wipeFolder
+	rm "$wipeFile"
+	rm -r "$wipeFolder"
 	rm tmpFile
 	printf "completed wipe: $ctr/$wipeRuns \n"
 done
